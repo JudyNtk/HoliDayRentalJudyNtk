@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.ASP", "HomeShare\HoliDayRental.ASP.csproj", "{8020D524-9DA0-42F3-906F-C726363F865F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HoliDayRental.DB", "HoliDayRental.DB\HoliDayRental.DB.sqlproj", "{86D984FC-8413-4724-93FC-BAAF7FCC59C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{6C6B1D79-76A9-4B48-B535-2E6425A12CCD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.DAL", "ClassLibrary1\HoliDayRental.DAL.csproj", "{2897754E-B372-47DF-ADAA-A420C7CE11ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{54BC80DE-03CB-45C6-ABE4-08E09FE54943}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.BLL", "HoliDayRentl.BLL\HoliDayRental.BLL.csproj", "{97AF294F-1AE6-441E-9E92-D0A4055E31F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.Common", "HoliDayRental.Common\HoliDayRental.Common.csproj", "{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8020D524-9DA0-42F3-906F-C726363F865F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8020D524-9DA0-42F3-906F-C726363F865F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8020D524-9DA0-42F3-906F-C726363F865F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8020D524-9DA0-42F3-906F-C726363F865F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D984FC-8413-4724-93FC-BAAF7FCC59C4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2897754E-B372-47DF-ADAA-A420C7CE11ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2897754E-B372-47DF-ADAA-A420C7CE11ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2897754E-B372-47DF-ADAA-A420C7CE11ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2897754E-B372-47DF-ADAA-A420C7CE11ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AF294F-1AE6-441E-9E92-D0A4055E31F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AF294F-1AE6-441E-9E92-D0A4055E31F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AF294F-1AE6-441E-9E92-D0A4055E31F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AF294F-1AE6-441E-9E92-D0A4055E31F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2897754E-B372-47DF-ADAA-A420C7CE11ED} = {6C6B1D79-76A9-4B48-B535-2E6425A12CCD}
+		{97AF294F-1AE6-441E-9E92-D0A4055E31F3} = {54BC80DE-03CB-45C6-ABE4-08E09FE54943}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27899870-7CEA-4A05-A2CC-D1884DDA0644}
+	EndGlobalSection
+EndGlobal
