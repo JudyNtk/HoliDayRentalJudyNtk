@@ -1,0 +1,10 @@
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\bin\Debug\HoliDayRental.DB.dacpac
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\bin\Debug\HoliDayRental.DB.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\bin\Debug\HoliDayRental.DB.pdb
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\HoliDayRental.DB.sqlproj.AssemblyReference.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\Model.xml
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\refactor.xml
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\postdeploy.sql
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\predeploy.sql
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\HoliDayRental.DB.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.DB\obj\Debug\HoliDayRental.DB.pdb

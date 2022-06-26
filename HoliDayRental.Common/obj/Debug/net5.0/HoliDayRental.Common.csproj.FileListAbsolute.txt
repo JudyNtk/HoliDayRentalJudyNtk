@@ -1,0 +1,12 @@
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\bin\Debug\net5.0\HoliDayRental.Common.deps.json
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\bin\Debug\net5.0\HoliDayRental.Common.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\bin\Debug\net5.0\ref\HoliDayRental.Common.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\bin\Debug\net5.0\HoliDayRental.Common.pdb
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.csproj.AssemblyReference.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.AssemblyInfoInputs.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.AssemblyInfo.cs
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.csproj.CoreCompileInputs.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\ref\HoliDayRental.Common.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRental.Common\obj\Debug\net5.0\HoliDayRental.Common.pdb

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HoliDayRental.ASP.Models.BienEchangeDetails>
+
+<div>
+    <dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescCourte)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePerson)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ville)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pays)
+        </dt>
+
+
+        @foreach (var item in Model)
+        {
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.Titre)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.DescCourte)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.NombrePerson)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.Photo)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.Ville)
+            </dd>
+            <dd>
+                @Html.DisplayNameFor(modelItem => item.Pays)
+            </dd> 
+
+
+        }
+    </dl>
+</div>   
+

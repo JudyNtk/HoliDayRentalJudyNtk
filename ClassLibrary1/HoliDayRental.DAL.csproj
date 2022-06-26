@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HoliDayRental.Common\HoliDayRental.Common.csproj" />
-    <ProjectReference Include="..\HomeShare\HoliDayRental.ASP.csproj" />
   </ItemGroup>
 
 </Project>

@@ -25,11 +25,15 @@ namespace HoliDayRental.ASP.Models
         [Required]
         [DisplayName("Téléphone")]
         public string Telephone { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Le login est obligatoire.")]
         [DisplayName("Login")]
         public string Login { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Le password est obligatoire.")]
         [DisplayName("Mot de passe")]
         public string Password { get; set; }
+
+        public FormulaireConnexion Connection { get; set; }
+
+        public bool CheckCondition { get; set; }
     }   
 }

@@ -1,63 +1,52 @@
-﻿using HoliDayRental.BLL.Handlers;
-using HoliDayRental.BLL.Entities;
+﻿using HoliDayRental.BLL.Entities;
+using HoliDayRental.BLL.Handlers;
 using HoliDayRental.Common.Repositories;
+using HoliDayRental.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace HoliDayRental.BLL.Services
 {
-    public class MembreService : IMembreRepository<Membre>
+    public class MembreService : IMembreRepository<MembreB>
     {
-        private readonly IMembreRepository<DAL.Entities.Membre> _membreRepository;
+        private readonly IMembreRepository<MembreD> _membreRepository;
 
-        public MembreService(IMembreRepository<DAL.Entities.Membre> repository)
+        public MembreService(IMembreRepository<MembreD> repository)
         {
             _membreRepository = repository;
         }
-        public void Delete(int id)
+
+        // Crud (salade tout) :
+        public void Delete(int idMembre)
         {
-            _membreRepository.Delete(id);
+            _membreRepository.Delete(idMembre);
         }
 
-        public Membre Get(int id)
+        public MembreB Get(int idMembre)
         {
-            return _membreRepository.Get(id).ToBLL();
+            return _membreRepository.Get(idMembre).ToBLL();
         }
 
-        public IEnumerable<Membre> Get()
+        public IEnumerable<MembreB> Get()
         {
-            return _membreRepository.Get().Select(m => m.ToBLL());
+            return _membreRepository.Get().Select(d =>
+            {
+                MembreB result = d.ToBLL();
+                return result; // return _membreRepository.Get().Select(m => m.ToBLL()); ????
+            });
         }
 
-        public IEnumerable<Membre> GetByMembreBienEchange(int idBien, DateTime DateDebEchange, DateTime DateFinEchange)
-        {
-            return _membreRepository.GetByMembreBienEchange(idBien, DateDebEchange, DateFinEchange).Select(m => m.ToBLL());
-        }
-
-        public Membre GetByMembreBienEchangeId(int membrebienechangeId)
-        {
-            return _membreRepository.GetByMembreBienEchangeId(membrebienechangeId).ToBLL();
-        }
-
-        public IEnumerable<Membre> GetByBienEchange(int idBien)
-        {
-            return _membreRepository.GetByBienEchange(idBien).Select(m => m.ToBLL();
-        }
-
-        public int Insert(Membre entity)
+        public int Insert(MembreB entity)
         {
             return _membreRepository.Insert(entity.ToDAL());
         }
 
-        public void Update(int id, Membre entity)
+        public void Update(int idMembre, MembreB entity)
         {
-            _membreRepository.Update(id, entity.ToDAL());
-        }
-
-        public IEnumerable<Membre> GetByMembreBienEchange(int idBien, int idMembre)
-        {
-            throw new NotImplementedException();
+            _membreRepository.Update(idMembre, entity.ToDAL());
         }
     }
 }

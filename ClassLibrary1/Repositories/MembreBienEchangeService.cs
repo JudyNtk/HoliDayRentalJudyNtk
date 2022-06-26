@@ -1,4 +1,5 @@
-﻿using HoliDayRental.DAL.Entities;
+﻿using HoliDayRental.Common.Repositories;
+using HoliDayRental.DAL.Entities;
 using HoliDayRental.DAL.Handlers;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Repositories
 {
-    class MembreBienEchangeService : ServiceBase, IGetByMembreBienEchangeRepository<MembreBienEchange>
+   public class MembreBienEchangeService : ServiceBase, IMembreBienEchangeRepository<MembreBienEchangeD>
     {
         public void Delete(int idBien, int idMembre)
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
+            using (SqlConnection connection = new SqlConnection(base._connString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
@@ -28,13 +29,13 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public MembreBienEchange Get(int idBien, int idMembre)
+        public MembreBienEchangeD Get(int idBien, int idMembre)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [Id], [Cinema_Id], [Film_Id], [DateDiffusion] FROM [Diffusion] WHERE [Id] = @id";
+                    command.CommandText = "SELECT [IdMembre], [IdBien], [DateDebEchange], [DateFinEchange], [Assurance], [Valide] FROM [MembreBienEchange] WHERE [IdMembre] = @idMembre,[IdBien] = @idBien";
                     SqlParameter p_idBien = new SqlParameter("idBien", idBien);
                     command.Parameters.Add(p_idBien);
                     SqlParameter p_idMembre = new SqlParameter("idMembre", idMembre);
@@ -47,7 +48,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<MembreBienEchange> Get()
+        public IEnumerable<MembreBienEchangeD> Get()
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -61,7 +62,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<MembreBienEchange> Get(DateTime date)
+        public IEnumerable<MembreBienEchangeD> Get(DateTime date)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -77,13 +78,13 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<MembreBienEchange> GetByIdMembre(int idMembre)
+        public IEnumerable<MembreBienEchangeD> GetByIdMembre(int idMembre)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [IdMembre],[IdBien],[DateDebEchange],[DateFinEchange],[Assurance],[Valide] FROM [MembreBienEchange] WHERE [IdMembre]=@membre";
+                    command.CommandText = "SELECT [IdMembre],[IdBien],[DateDebEchange],[DateFinEchange],[Assurance],[Valide] FROM [MembreBienEchange] WHERE [IdMembre]=@membre,[IdBien]=@bienEchange";
                     SqlParameter p_membre = new SqlParameter("membre", idMembre);
                     command.Parameters.Add(p_membre);
                     connection.Open();
@@ -93,7 +94,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<MembreBienEchange> GetByIdBien(int idMembre)
+        public IEnumerable<MembreBienEchangeD> GetByIdBien(int idBien)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -110,7 +111,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public int Insert(MembreBienEchange entity)
+        public int Insert(MembreBienEchangeD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -121,10 +122,10 @@ namespace HoliDayRental.DAL.Repositories
                     command.Parameters.Add(p_membre);
                     SqlParameter p_bien = new SqlParameter("bien", entity.IdBien);
                     command.Parameters.Add(p_bien);
-                    SqlParameter p_date = new SqlParameter("date", entity.DateDebEchange);
-                    command.Parameters.Add(p_date);
-                    SqlParameter p_date = new SqlParameter("date", entity.DateFinEchange);
-                    command.Parameters.Add(p_date);
+                    SqlParameter p_dateDebEchange = new SqlParameter("date", entity.DateDebEchange);
+                    command.Parameters.Add(p_dateDebEchange);
+                    SqlParameter p_dateFinEchange = new SqlParameter("date", entity.DateFinEchange);
+                    command.Parameters.Add(p_dateFinEchange);
                     SqlParameter p_assurance = new SqlParameter("anssurance", entity.Assurance);
                     command.Parameters.Add(p_assurance);
                     SqlParameter p_valide = new SqlParameter("valide", entity.Valide);
@@ -135,7 +136,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public void Update(int id, MembreBienEchange entity)
+        public void Update(int id, MembreBienEchangeD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -146,10 +147,10 @@ namespace HoliDayRental.DAL.Repositories
                     command.Parameters.Add(p_membre);
                     SqlParameter p_bien = new SqlParameter("bien", entity.IdBien);
                     command.Parameters.Add(p_bien);
-                    SqlParameter p_date = new SqlParameter("date", entity.DateDebEchange);
-                    command.Parameters.Add(p_date);
-                    SqlParameter p_date = new SqlParameter("date", entity.DateFinEchange);
-                    command.Parameters.Add(p_date);
+                    SqlParameter p_dateDebEchange = new SqlParameter("date", entity.DateDebEchange);
+                    command.Parameters.Add(p_dateDebEchange);
+                    SqlParameter p_dateFinEchange = new SqlParameter("date", entity.DateFinEchange);
+                    command.Parameters.Add(p_dateFinEchange);
                     SqlParameter p_assurance = new SqlParameter("anssurance", entity.Assurance);
                     command.Parameters.Add(p_assurance);
                     SqlParameter p_valide = new SqlParameter("valide", entity.Valide);
@@ -160,5 +161,14 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MembreBienEchangeD Get(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

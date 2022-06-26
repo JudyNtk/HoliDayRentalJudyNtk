@@ -7,10 +7,8 @@ using HoliDayRental.Common.Repositories;
 
 namespace HoliDayRental.Common.Repositories
 {
-    public interface IMembreRepository<TMembre> : IRepository<TMembre, int>,
-        IGetByMembreBienEchangeRepository<TMembre>
+    public interface IMembreRepository<TMembre> : IRepository<TMembre, int>        
     {
-        IEnumerable<TMembre> GetByMembreBienEchange(int idBien, int idMembre);
-        IEnumerable<TMembre> GetByBienEchange(int idBien);
+
     }
 }

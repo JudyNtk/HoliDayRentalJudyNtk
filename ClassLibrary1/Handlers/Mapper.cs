@@ -1,122 +1,118 @@
 ﻿using HoliDayRental.DAL.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Handlers
 {
     public static class Mapper 
     {
-        public static Membre ToMembre(IDataRecord record)
+        public static MembreD ToMembre(IDataRecord record)
         {
             if (record is null) return null;
-            return new Membre
+            return new MembreD
             {
-                IdMembre = (int)record[nameof(Membre.IdMembre)],
-                Nom = (string)record[nameof(Membre.Nom)],
-                Prenom = (string)record[nameof(Membre.Prenom)],
-                Email = (string)record[nameof(Membre.Email)],
-                Pays = (int)record[nameof(Membre.Pays)],
-                Telephone = (string)record[nameof(Membre.Telephone)],
-                Login = (string)record[nameof(Membre.Login)],
-                Password = (string)record[nameof(Membre.Password)]
+                IdMembre = (int)record[nameof(MembreD.IdMembre)],
+                Nom = (string)record[nameof(MembreD.Nom)],
+                Prenom = (string)record[nameof(MembreD.Prenom)],
+                Email = (string)record[nameof(MembreD.Email)],
+                Pays = (int)record[nameof(MembreD.Pays)],
+                Telephone = (string)record[nameof(MembreD.Telephone)],
+                Login = (string)record[nameof(MembreD.Login)],
+                Password = (string)record[nameof(MembreD.Password)]
             };
         }
 
-        public static BienEchange ToBienEchange(IDataRecord record)
+        public static BienEchangeD ToBienEchange(IDataRecord record)
         {
             if (record is null) return null;
-            return new BienEchange
+            return new BienEchangeD
             {
-                IdBien = (int)record[nameof(BienEchange.IdBien)],
-                Titre = (string)record[nameof(BienEchange.Titre)],
-                DescCourte = (string)record[nameof(BienEchange.DescCourte)],
-                DescLong = (string)record[nameof(BienEchange.DescLong)],
-                NombrePerson = (int)record[nameof(BienEchange.NombrePerson)],
-                Pays = (int)record[nameof(BienEchange.Pays)],
-                Ville = (string)record[nameof(BienEchange.Ville)],
-                Rue = (string)record[nameof(BienEchange.Rue)],
-                Numero = (string)record[nameof(BienEchange.Numero)],
-                CodePostal = (string)record[nameof(BienEchange.CodePostal)],
-                Photo = (string)record[nameof(BienEchange.Photo)],
-                AssuranceObligatoire = (bool)record[nameof(BienEchange.AssuranceObligatoire)],
-                IsEnabled = (bool)record[nameof(BienEchange.IsEnabled)],
-                DisabledDate = (DateTime)record[nameof(BienEchange.DisabledDate)],
-                Latitude = (string)record[nameof(BienEchange.Latitude)],
-                Longitude = (string)record[nameof(BienEchange.Longitude)],
-                IdMembre = (int)record[nameof(BienEchange.IdMembre)],
-                DateCreation = (DateTime)record[nameof(BienEchange.DateCreation)]
-
-            };
-        }
-
-        internal static Membre ToCinema(SqlDataReader reader)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static AvisMembreBien ToAvisMembreBien(IDataRecord record)
-        {
-            if (record is null) return null;
-            return new AvisMembreBien
-            {
-                IdAvis = (int)record[nameof(AvisMembreBien.IdAvis)],
-                Note = (int)record[nameof(AvisMembreBien.Note)],
-                Message = (string)record[nameof(AvisMembreBien.Message)],
-                IdMembre = (int)record[nameof(AvisMembreBien.IdMembre)],
-                IdBien = (int)record[nameof(AvisMembreBien.IdBien)],
-                DateAvis = (DateTime)record[nameof(AvisMembreBien.DateAvis)],
-                Approuve = (bool)record[nameof(AvisMembreBien.Approuve)]
+                IdBien = (int)record[nameof(BienEchangeD.IdBien)],
+                Titre = (string)record[nameof(BienEchangeD.Titre)],
+                DescCourte = (string)record[nameof(BienEchangeD.DescCourte)],
+                DescLong = (string)record[nameof(BienEchangeD.DescLong)],
+                NombrePerson = (int)record[nameof(BienEchangeD.NombrePerson)],
+                Pays = (int)record[nameof(BienEchangeD.Pays)],
+                Ville = (string)record[nameof(BienEchangeD.Ville)],
+                Rue = (string)record[nameof(BienEchangeD.Rue)],
+                Numero = (string)record[nameof(BienEchangeD.Numero)],
+                CodePostal = (string)record[nameof(BienEchangeD.CodePostal)],
+                Photo = (string)record[nameof(BienEchangeD.Photo)],
+                AssuranceObligatoire = (bool)record[nameof(BienEchangeD.AssuranceObligatoire)],
+                IsEnabled = (bool)record[nameof(BienEchangeD.IsEnabled)],
+                DisabledDate = (DateTime)record[nameof(BienEchangeD.DisabledDate)],
+                Latitude = (string)record[nameof(BienEchangeD.Latitude)],
+                Longitude = (string)record[nameof(BienEchangeD.Longitude)],
+                IdMembre = (int)record[nameof(BienEchangeD.IdMembre)],
+                DateCreation = (DateTime)record[nameof(BienEchangeD.DateCreation)]
 
             };
         }
 
-        public static MembreBienEchange ToMembreBienEchange(IDataRecord record)
+        //internal static MembreD ToMembre(SqlDataReader reader)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public static AvisMembreBienD ToAvisMembreBien(IDataRecord record)
         {
             if (record is null) return null;
-            return new MembreBienEchange
+            return new AvisMembreBienD
             {
-                IdMembre = (int)record[nameof(MembreBienEchange.IdMembre)],
-                IdBien = (int)record[nameof(MembreBienEchange.IdBien)],
-                DateDebEchange = (DateTime)record[nameof(MembreBienEchange.DateDebEchange)],
-                DateFinEchange = (DateTime)record[nameof(MembreBienEchange.DateFinEchange)],
-                Assurance = (bool)record[nameof(MembreBienEchange.Assurance)],
-                Valide = (bool)record[nameof(MembreBienEchange.Valide)]
+                IdAvis = (int)record[nameof(AvisMembreBienD.IdAvis)],
+                Note = (int)record[nameof(AvisMembreBienD.Note)],
+                Message = (string)record[nameof(AvisMembreBienD.Message)],
+                IdMembre = (int)record[nameof(AvisMembreBienD.IdMembre)],
+                IdBien = (int)record[nameof(AvisMembreBienD.IdBien)],
+                DateAvis = (DateTime)record[nameof(AvisMembreBienD.DateAvis)],
+                Approuve = (bool)record[nameof(AvisMembreBienD.Approuve)]
+
             };
         }
 
-        public static OptionsBien ToOptionsBien(IDataRecord record)
+        public static MembreBienEchangeD ToMembreBienEchange(IDataRecord record)
         {
             if (record is null) return null;
-            return new OptionsBien
+            return new MembreBienEchangeD
+            {
+                IdMembre = (int)record[nameof(MembreBienEchangeD.IdMembre)],
+                IdBien = (int)record[nameof(MembreBienEchangeD.IdBien)],
+                DateDebEchange = (DateTime)record[nameof(MembreBienEchangeD.DateDebEchange)],
+                DateFinEchange = (DateTime)record[nameof(MembreBienEchangeD.DateFinEchange)],
+                Assurance = (bool)record[nameof(MembreBienEchangeD.Assurance)],
+                Valide = (bool)record[nameof(MembreBienEchangeD.Valide)]
+            };
+        }
+
+        public static OptionsBienD ToOptionsBien(IDataRecord record)
+        {
+            if (record is null) return null;
+            return new OptionsBienD
             { 
-                IdOption = (int)record[nameof(OptionsBien.IdOption)],
-                IdBien = (int)record[nameof(OptionsBien.IdBien)],
-                Valeur = (string)record[nameof(OptionsBien.)]
+                IdOption = (int)record[nameof(OptionsBienD.IdOption)],
+                IdBien = (int)record[nameof(OptionsBienD.IdBien)],
+                Valeur = (string)record[nameof(OptionsBienD.Valeur)]
             };
         }
 
-        public static Options ToOptions(IDataRecord record)
+        public static OptionsD ToOptions(IDataRecord record)
         {
             if (record is null) return null;
-            return new Options
+            return new OptionsD
             {
-                IdOption = (int)record[nameof(OptionsBien.IdOption)],
-                Libelle = (string)record[nameof(OptionsBien.Libelle)]
+                IdOption = (int)record[nameof(OptionsD.IdOption)],
+                Libelle = (string)record[nameof(OptionsD.Libelle)]
             };
         }
 
-        public static Pays ToPays(IDataRecord record)
+        public static PaysD ToPays(IDataRecord record)
         {
             if (record is null) return null;
-            return new Pays
+            return new PaysD
             { 
-                IdPays = (int)record[nameof(Pays.IdPays)],
-                Libelle = (string)record[nameof(OptionsBien.Libelle)]
+                IdPays = (int)record[nameof(PaysD.IdPays)],
+                Libelle = (string)record[nameof(PaysD.Libelle)]
             };
         }
     }

@@ -1,4 +1,5 @@
-﻿using HoliDayRental.DAL.Entities;
+﻿using HoliDayRental.Common.Repositories;
+using HoliDayRental.DAL.Entities;
 using HoliDayRental.DAL.Handlers;
 using System;
 using System.Collections.Generic;
@@ -9,38 +10,35 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Repositories
 {
-    public class BienEchangeService : ServiceBase, IBienEchangeRepository<BienEchange>
+    public class BienEchangeService : ServiceBase, IBienEchangeRepository<BienEchangeD>
     {
+        public IEnumerable<BienEchangeD> CinqDernierBiens()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(int idBien)
         {
-            using (SqlConnection connection = _connString)
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "DELETE FROM [BienEchange] WHERE [IdBien] = @idBien";
-                    SqlParameter p_idBien = new SqlParameter("idMembre", idBien);
-                    command.Parameters.Add(p_idBien);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-            }
+            using SqlConnection connection = new SqlConnection(_connString);
+            using SqlCommand command = connection.CreateCommand();
+            command.CommandText = "DELETE FROM [BienEchange] WHERE [IdBien] = @idBien";
+            SqlParameter p_idBien = new SqlParameter("idMembre", idBien);
+            command.Parameters.Add(p_idBien);
+            connection.Open();
+            command.ExecuteNonQuery();
         }
 
-        public IEnumerable<BienEchange> Get()
+        public IEnumerable<BienEchangeD> Get()
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "SELECT [IdBien] [Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange]";
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read()) yield return Mapper.ToBienEchange(reader);
-                }
-            }
+            using SqlConnection connection = new SqlConnection(_connString);
+            using SqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT [IdBien] [Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange]";
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) yield return Mapper.ToBienEchange(reader);
         }
 
-        public BienEchange Get(int idBien)
+        public BienEchangeD Get(int idBien)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -50,49 +48,43 @@ namespace HoliDayRental.DAL.Repositories
                     SqlParameter p_idBien = new SqlParameter("idBien", idBien);
                     command.Parameters.Add(p_idBien);
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read()) return Mapper.ToBienEchange(reader);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) return Mapper.ToBienEchange(reader);
+                    }
                     return null;
                 }
             }
         }
 
-        public BienEchange GetByBienEchangeId(int membrebienechangeId)
+        public BienEchangeD GetByBienEchangeId(int membrebienechangeId)
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "SELECT [BienEchange].[IdBien],[Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange] JOIN [MembreBienEchange] ON [BienEchange].[IdBien] = [idBien] WHERE [MembreEchangeBien].[IdBien] = @idBien";
-                    SqlParameter p_idBien = new SqlParameter("idBien", membrebienechangeId);
-                    command.Parameters.Add(p_idBien);
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read()) return Mapper.ToBienEchange(reader);
-                    return null;
-                }
-            }
+            using SqlConnection connection = new SqlConnection(_connString);
+            using SqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT [BienEchange].[IdBien],[Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange] JOIN [MembreBienEchange] ON [BienEchange].[IdBien] = [idBien] WHERE [MembreEchangeBien].[IdBien] = @idBien";
+            SqlParameter p_idBien = new SqlParameter("idBien", membrebienechangeId);
+            command.Parameters.Add(p_idBien);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read()) return Mapper.ToBienEchange(reader);
+            return null;
         }
 
-        public IEnumerable<BienEchange> GetByPays(int pays)
+        public IEnumerable<BienEchangeD> GetByPays(int pays)
         {
-            using (SqlConnection connection = new SqlConnection(_connString))
-            {
-                using (SqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = "SELECT [IdBien],[Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange] WHERE PAYS([Pays]) = @pays";
-                    //Parameters...
-                    SqlParameter p_year = new SqlParameter("pays", pays);
-                    command.Parameters.Add(p_year);
-                    connection.Open();
-                    //Choose Execution method
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read()) yield return Mapper.ToBienEchange(reader);
-                }
-            }
+            using SqlConnection connection = new SqlConnection(_connString);
+            using SqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT [IdBien],[Titre],[DescCourte],[DescLong],[NombrePerson],[Pays],[Ville],[Rue],[Numero],[CodePostal],[Photo],[AssuranceObligatoire],[IsEnabled],[DisabledDate],[Latitude],[Longitude],[IdMembre],[DateCreation] FROM [BienEchange] WHERE PAYS([Pays]) = @pays";
+            //Parameters...
+            SqlParameter p_year = new SqlParameter("pays", pays);
+            command.Parameters.Add(p_year);
+            connection.Open();
+            //Choose Execution method
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) yield return Mapper.ToBienEchange(reader);
         }
 
-        public int Insert(BienEchange entity)
+        public int Insert(BienEchangeD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -140,7 +132,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public void Update(int idBien, BienEchange entity)
+        public void Update(int idBien, BienEchangeD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {

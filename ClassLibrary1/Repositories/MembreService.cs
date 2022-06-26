@@ -3,10 +3,11 @@ using HoliDayRental.DAL.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using HoliDayRental.Common.Repositories;
 
 namespace HoliDayRental.DAL.Repositories
 {
-    public class MembreService : ServiceBase, IMembreRepository<Membre>
+    public class MembreService : ServiceBase, IMembreRepository<MembreD>
     {
         public void Delete(int id)
         {
@@ -23,7 +24,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<Membre> Get()
+        public IEnumerable<MembreD> Get()
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -32,14 +33,14 @@ namespace HoliDayRental.DAL.Repositories
                     command.CommandText = "SELECT [IdMembre],[Nom],[Prenom],[Email],[Pays],[Telephone],[Login],[Password] FROM [Membre]";
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read()) yield return Mapper.ToCinema(reader);
+                    while (reader.Read()) yield return Mapper.ToMembre(reader);
                 }
             }
         }
 
-        public Membre Get(int idMembre)
+        public MembreD Get(int idMembre)
         {
-            using(SqlConnection connection = new SqlConnection(_connString))
+            using (SqlConnection connection = new SqlConnection(_connString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
@@ -53,7 +54,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<Membre> GetByMembreBienEchange(int idBien, DateTime DateDebEchange)
+        public IEnumerable<MembreD> GetByMembreBienEchange(int idBien, DateTime DateDebEchange)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -71,7 +72,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public Membre GetByMembreEchangeBienId(int membrebienechangeId)
+        public MembreD GetByMembreEchangeBienId(int membrebienechangeId)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -89,7 +90,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<Membre> GetByBienEchange(int idBien)
+        public IEnumerable<MembreD> GetByBienEchange(int idBien)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -107,7 +108,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public int Insert(Membre entity)
+        public int Insert(MembreD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -134,7 +135,7 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public void Update(int idMembre, Membre entity)
+        public void Update(int idMembre, MembreD entity)
         {
             using (SqlConnection connection = new SqlConnection(_connString))
             {
@@ -163,14 +164,15 @@ namespace HoliDayRental.DAL.Repositories
             }
         }
 
-        public IEnumerable<Membre> GetByMembreBienEchange(int idBien, int idMembre)
+        public IEnumerable<MembreD> GetByMembreBienEchange(int idBien, int idMembre)
         {
             throw new NotImplementedException();
         }
 
-        public Membre GetByMembreBienEchangeId(int membrebienechangeId)
+        public MembreD GetByMembreBienEchangeId(int membrebienechangeId)
         {
             throw new NotImplementedException();
         }
     }
+}
 

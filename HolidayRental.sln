@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{54BC80DE-03C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.BLL", "HoliDayRentl.BLL\HoliDayRental.BLL.csproj", "{97AF294F-1AE6-441E-9E92-D0A4055E31F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.Common", "HoliDayRental.Common\HoliDayRental.Common.csproj", "{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HoliDayRental.Common", "HoliDayRental.Common\HoliDayRental.Common.csproj", "{627FA4D9-BA4B-4D2E-8B74-DF13F8F53A6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP", "ASP", "{49126931-A6C8-47C2-AA3B-121D9C1E15A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{8020D524-9DA0-42F3-906F-C726363F865F} = {49126931-A6C8-47C2-AA3B-121D9C1E15A5}
 		{2897754E-B372-47DF-ADAA-A420C7CE11ED} = {6C6B1D79-76A9-4B48-B535-2E6425A12CCD}
 		{97AF294F-1AE6-441E-9E92-D0A4055E31F3} = {54BC80DE-03CB-45C6-ABE4-08E09FE54943}
 	EndGlobalSection

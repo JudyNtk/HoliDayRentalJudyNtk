@@ -2,9 +2,8 @@
 
 namespace HoliDayRental.Common.Repositories
 {
-    public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int> ,
-        IGetByBienEchangeRepository<TBienEchange>
+    public interface IBienEchangeRepository<TBienEchange> : IRepository<TBienEchange, int> 
     {
-        public IEnumerable<TBienEchange> GetByPays(int pays);
+        IEnumerable<TBienEchange> CinqDernierBiens();
     }
 }

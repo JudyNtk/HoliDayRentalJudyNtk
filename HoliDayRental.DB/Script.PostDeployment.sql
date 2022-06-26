@@ -9,7 +9,7 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-USE [HolyDayRental]
+USE [HoliDayRental.DB]
 GO
 SET IDENTITY_INSERT [dbo].[Options] ON 
 GO

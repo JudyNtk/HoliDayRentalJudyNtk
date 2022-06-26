@@ -1,0 +1,17 @@
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.csproj.AssemblyReference.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.AssemblyInfoInputs.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.AssemblyInfo.cs
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.csproj.CoreCompileInputs.cache
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.BLL.deps.json
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.BLL.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\ref\HoliDayRental.BLL.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.BLL.pdb
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.Common.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.DAL.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.DAL.pdb
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\bin\Debug\net5.0\HoliDayRental.Common.pdb
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.csproj.CopyComplete
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\ref\HoliDayRental.BLL.dll
+C:\Users\judyn\OneDrive\Documenten\ASP_NET\HoliDayRentalJudyNtk\HoliDayRentl.BLL\obj\Debug\net5.0\HoliDayRental.BLL.pdb
